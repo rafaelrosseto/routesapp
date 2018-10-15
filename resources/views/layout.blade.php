@@ -36,7 +36,7 @@
       @yield('content')
     </div>
 
-<footer class="footer">
+<footer class="footer fixed-bottom">
 <div class="container">
 	<span class="text-muted">
 		<div class="footer-copyright text-center py-3">© 2018

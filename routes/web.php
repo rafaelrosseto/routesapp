@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'GridController@index');
+Route::get('/export', 'GridController@export');
 
-Route::get('import', function () {
-    return view('import');
-});
+Route::get('/import', 'ImportController@index');
+Route::post('/import', 'ImportController@handleImport')->name('import-handle');

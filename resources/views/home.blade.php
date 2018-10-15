@@ -2,6 +2,7 @@
 
 @section('content')
 
+@if($clients->isEmpty())
 <div class="row">
 	<div class="col-lg-12">
 	<div class="alert alert-warning" role="alert">
@@ -9,6 +10,7 @@
 	</div>
 	</div>
 </div>
+@endif
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<h1>Grid</h1>
@@ -37,14 +39,16 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+		  	@foreach($clients as $c)
 		    <tr>
-		      <td>Tiger Nixon</td>
-		      <td>System Architect</td>
-		      <td>Edinburgh</td>
-		      <td>61</td>
-		      <td>2011/04/25</td>
-		      <td>$320,800</td>
+		      <td>{{$c->name}}</td>
+		      <td>{{$c->email}}</td>
+		      <td>{{$c->birthdate}}</td>
+		      <td>{{$c->cpf}}</td>
+		      <td>{{$c->adress->logradouro}}, {{$c->adress->numero}} - {{$c->adress->bairro}} - {{$c->adress->cidade}}</td>
+		      <td>{{$c->adress->cep}}</td>
 		    </tr>
+		    @endforeach
 		    </tbody>
 		  <tfoot>
 		    <tr>
@@ -63,6 +67,12 @@
 		    </tr>
 		  </tfoot>
 		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12 text-center">
+		<a href="/export" class="btn btn-primary" role="button	">Export</a>
 	</div>
 </div>
 @endsection
