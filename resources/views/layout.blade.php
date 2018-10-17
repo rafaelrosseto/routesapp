@@ -24,7 +24,7 @@
               <a class="nav-link" href="/import">Import</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Delivery Routes</a>
+              <a class="nav-link" href="/delivery-routes">Delivery Routes</a>
             </li>
           </ul>
         </div>

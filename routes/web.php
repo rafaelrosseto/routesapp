@@ -16,3 +16,6 @@ Route::get('/export', 'GridController@export');
 
 Route::get('/import', 'ImportController@index');
 Route::post('/import', 'ImportController@handleImport')->name('import-handle');
+
+Route::get('/delivery-routes', 'DeliveryRoutesController@index');
+Route::post('/delivery-routes', 'DeliveryRoutesController@getRoutes');
